@@ -1,0 +1,15 @@
+[project]
+name = "ml"
+version = "0.1.0"
+description = "My ML interview solution"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.116.1",
+    "numpy~=2.3.2",
+    "pydantic~=2.11.7",
+    "pyyaml~=6.0.2",
+    "redis~=6.4.0",
+    "scikit-learn==1.6.1",
+    "sentence-transformers~=5.1.0",
+    "uvicorn>=0.35.0",
+]

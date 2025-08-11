@@ -1,0 +1,29 @@
+info:
+  name: Car Repair Classifier
+  description: Simple FastAPI app for serving a car repair section classification
+
+model:
+  weights_path: "../data/repair_classifier.pth"
+  softmax_threshold: 0.5
+
+similarity:
+  data_path: "../data/dataset.csv"
+  model_name: "all-MiniLM-L6-v2"
+  distance_threshold: 0.55
+  metric: "cosine"
+
+cache:
+  enabled: true
+  type: "redis"
+  redis:
+    host: "localhost"
+    port: 6379
+    ttl_hours: 24
+  memory:
+    max_size: 1000
+    ttl_hours: 24
+
+server:
+  host: "0.0.0.0"
+  port: 3074 # easter egg ^^ because port 8000 was taken
+  workers: 1
