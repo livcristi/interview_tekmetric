@@ -1,0 +1,36 @@
+### POST request with a single repair item
+POST http://localhost:3074/repairs
+Content-Type: application/json
+
+{
+  "text": "Changing the fog light on the front left side"
+}
+
+//Response: {
+//  "section": "Lighting",
+//  "name": "Side Marker/Fog Lamp Assembly"
+//}
+
+### POST request with batched repair items
+POST http://localhost:3074/repairs_batch
+Content-Type: application/json
+
+{
+  "texts": ["Changing the fog light on the front left side", "Filling the flux capacitor", "Swap one of the engine arms"]
+}
+
+//Response
+//[
+//  {
+//    "section": "Lighting",
+//    "name": "Side Marker/Fog Lamp Assembly"
+//  },
+//  {
+//    "section": "unknown",
+//    "name": "unknown"
+//  },
+//  {
+//    "section": "Engine",
+//    "name": "Engine Mount"
+//  }
+//]
